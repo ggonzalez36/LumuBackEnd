@@ -23,21 +23,26 @@ df.insert(0, 'timestamp', first_column)
 df = df.drop(["Date", "Hour"], axis=1)
 print (df.head())
 
-
+#Total Records
+print("Total Records :" ,len(df.index))
 
 
 #print statics per client IP
 ipCount=df['client_ip'].value_counts()
 ipPercent=df['client_ip'].value_counts(normalize=True).mul(100).round(1).astype(str) + '%'
 IP=pd.DataFrame({'counts': ipCount, 'per': ipPercent})
+print("Client IPS Ranks")
+print("----------------------------------------------")
 print(IP)
-
+print("---------------------------------------------")
 #print statics per Host
 HostCount=df['name'].value_counts()
 HostPercent=df['name'].value_counts(normalize=True).mul(100).round(1).astype(str) + '%'
 Hosts=pd.DataFrame({'counts': HostCount, 'per': HostPercent})
+print("Host Ranks")
+print("--------------------------------------------------")
 print(Hosts)
-
+print("--------------------------------------------------")
 
 #URL end point
 url = 'https://api.lumu.io/collectors/5ab55d08-ae72-4017-a41c-d9d735360288/dns/queries?key=d39a0f19-7278-4a64-a255-b7646d1ace80'
