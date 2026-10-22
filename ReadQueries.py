@@ -1,5 +1,6 @@
 import csv
 import pandas as pd
+import os
 import requests
 import json
 
@@ -45,7 +46,7 @@ print(Hosts)
 print("--------------------------------------------------")
 
 #URL end point
-url = 'https://api.lumu.io/collectors/COLLECTOR_ID/dns/queries?key=REDACTED'
+url = f"https://api.lumu.io/collectors/{os.environ['LUMU_COLLECTOR_ID']}/dns/queries?key={os.environ['LUMU_CLIENT_KEY']}"
 myobj =   {
     "timestamp": "2021-01-06T14:37:02.228Z",
     "name": "www.example.com",

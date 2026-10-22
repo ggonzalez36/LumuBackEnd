@@ -2,7 +2,7 @@
 
 * this test process a log file query
 * get statics for the log 
-* send the logs to  a end point https://api.lumu.io/collectors/COLLECTOR_ID/dns/queries?key=REDACTED
+* send the logs to  a end point `https://api.lumu.io/collectors/<collector-id>/dns/queries?key=<client-key>` (set `LUMU_COLLECTOR_ID` and `LUMU_CLIENT_KEY` environment variables)
 * myobj =   {
     "timestamp": "2021-01-06T14:37:02.228Z",
     "name": "www.example.com",
